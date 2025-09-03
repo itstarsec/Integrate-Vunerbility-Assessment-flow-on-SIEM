@@ -1,0 +1,88 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
+  <diagram name="Workflow" id="0">
+    <mxGraphModel dx="2036" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-GEvd6Rr1e1NgdyfOokO-22" value="" style="shape=rect;fillColor=#FF6A00;gradientColor=#FF8E53;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-10" width="790" height="660" as="geometry" />
+        </mxCell>
+        <mxCell id="2" value="Web Client&lt;br&gt;(Admin Browser)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Desktop Client&lt;br&gt;(SOC/NOC Console)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="200" y="40" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Mobile Client&lt;br&gt;(On-call Engineer)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="400" y="40" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="UTMStack Web Server&lt;br&gt;(UI / REST API / Dashboards)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="200" y="140" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="HTTPS" style="endArrow=block;html=1;strokeColor=#000000;" parent="1" source="2" target="5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="HTTPS" style="endArrow=block;html=1;strokeColor=#000000;" parent="1" source="3" target="5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="HTTPS" style="endArrow=block;html=1;strokeColor=#000000;" parent="1" source="4" target="5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="VM#1 OpenVAS / Greenbone&lt;br&gt;Ubuntu 22.04&lt;br&gt;- Scanner&lt;br&gt;- OSPd-openvas&lt;br&gt;- GSAD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="40" y="280" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="VM#2 UTMStack SIEM/XDR&lt;br&gt;Ubuntu 22.04&lt;br&gt;- Ingest/Collector&lt;br&gt;- ETL/Normalizer&lt;br&gt;- Dashboards/Alerts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="470" y="280" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Results (Syslog/API/CSV)" style="endArrow=block;html=1;strokeColor=#000000;" parent="1" source="9" target="10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Status/Ack" style="endArrow=block;html=1;strokeColor=#000000;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="366" as="sourcePoint" />
+            <mxPoint x="280" y="366" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="Asset DB&lt;br&gt;(CMDB/CSV)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="40" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Vuln Feeds&lt;br&gt;(NVT/CVE)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="189" y="460" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Syslog / Other Sources" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="360" y="460" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Notifications&lt;br&gt;(Email/SMS/ChatOps)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="560" y="460" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Target Subnet 192.168.0.0/24&lt;br&gt;Hosts/Servers/IoT Devices" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="40" y="560" width="720" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Targets" style="endArrow=block;html=1;strokeColor=#000000;" parent="1" source="13" target="10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Feeds" style="endArrow=block;html=1;strokeColor=#000000;" parent="1" source="14" target="9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Alerts" style="endArrow=block;html=1;strokeColor=#000000;" parent="1" source="10" target="16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="Scan Traffic" style="endArrow=block;html=1;strokeColor=#000000;" parent="1" source="9" target="17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-GEvd6Rr1e1NgdyfOokO-23" value="" style="endArrow=block;html=1;strokeColor=#000000;" edge="1" parent="1" source="15" target="10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="452" y="460" as="sourcePoint" />
+            <mxPoint x="476" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-GEvd6Rr1e1NgdyfOokO-24" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="10" target="5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="250" as="sourcePoint" />
+            <mxPoint x="600" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
